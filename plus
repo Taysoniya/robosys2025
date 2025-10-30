@@ -1,8 +1,8 @@
 #!/home/yuto/anaconda3/bin/python3
 # SPDX-FileCopyrightText: 2025 Obata Yuuto
 # SPDX-License-Identifier: BSD-3-Clause
-
 import sys
+
 
 def tonum(s):
     try:
@@ -12,7 +12,6 @@ def tonum(s):
 
 
 ans=0
-
 for line in sys.stdin:
     line = line.rstrip()
     ans += tonum(line)
