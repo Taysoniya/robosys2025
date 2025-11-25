@@ -1,0 +1,29 @@
+#!/usr/bin/python3
+# SPDX-FileCopyrightText: 2025 Obata Yuuto
+# SPDX-License-Identifier: BSD-3-Clause
+
+import sys
+import re
+
+def main():    
+    try:
+        content = sys.stdin.read()
+
+
+        if not content:
+            sys.exit(0)
+
+
+        formatted = content.replace(';', ';\n')
+        formatted = formatted.replace('{', '{\n')
+        formatted = formatted.replace('}', '}\n')
+        formatted = re.sub(r'\n+', '\n', formatted)
+
+        sys.stdout.write(formatted)
+
+    except Exception as e:
+        sys.stderr.write(f"Error: {e}\n")
+        sys.exit(1)
+
+if __name__ == "__main__":
+    main()
