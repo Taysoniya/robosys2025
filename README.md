@@ -73,6 +73,6 @@ $ cat main.c | ./c-newline-add > formatted_main.c
 
 # ライセンス
 - このソフトウェアパッケージは,3条項BSDライセンスの下,再頒布および使用が許可されます。
-- なお、(test.bash)および(.github/workflows)は、下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを，本人の許可を得て参考にして自身の著作としたものです。
+- なお、(test.bash)および(.github/workflows)は、下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを、参考にしたものです。
     - [ryuichiueda/my_slides robosys_2025](https://github.com/ryuichiueda/my_slides/tree/master/robosys_2025)
 - © 2025 Obata Yuuto
