@@ -15,28 +15,28 @@
 
 ```bash
 $git clone [https://github.com/Taysoniya/robosys2025.git$](https://github.com/Taysoniya/robosys2025.git$) cd robosys2025
-
+'''
 実行権限が付与されてない場合は、以下のコマンドを実行してください。
 ```bash
 $ chmod +x c-newline-add
-
+'''
 # 使い方の例
 
 ## 基本的な使い方
 標準入力からテキストを流し込みます。
 '''bash
 echo 'void func(){;}' | ./c-newline-add
-
+'''
 ## ファイルの内容を整形する場合
 catコマンドと組み合わせます。
 '''bash
 cat main.c | ./c-newline-add
-
+'''
 ## 出力をファイルに保存する場合
 リダイレクトを使用します。
 '''bash
 cat main.c | ./c-newline-add > formatted_main.c
-
+'''
 # 注意点(Limitations)
 
 本ツールは正規表現を用いた簡易的なフィルタです。構文解析（パース）は行わないため、以下の制限があります。
