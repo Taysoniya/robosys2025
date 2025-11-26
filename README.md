@@ -2,19 +2,33 @@
 ロボットシステム学の講義用リポジトリ
 
 # c-newline-add
-
 標準入力からC言語のソースコードを読み込み、セミコロンや中括弧の後ろで改行を入れて見やすくするコマンドです。
 
+## デモ
+詰め込まれたコードが、以下のように展開されます。
+
+```bash
+$ echo 'int main(){printf("Hello");return 0;}' | ./c-newline-add
+int main(){
+printf("Hello");
+return 0;
+}
+```
 ## 機能
-* 詰め込まれたC言語のコードを標準入力から受け取ります。
-* ';' '{' '}' の直後に改行を挿入します。
-* 成形されたコードを標準出力へ出します。
+* セミコロン`;`の後ろで改行
+* 左中括弧`{`の後ろで改行
+* 右中括弧`}`の後ろで改行
+* 連続する不要な空行の除去
+
+##必要な環境
+* Python3.7
+* Ubuntu 22.04.5 LTS
 
 ## インストール
 このリポジトリをクローンしてください。
 
 ```bash
-$git clone [https://github.com/Taysoniya/robosys2025.git$](https://github.com/Taysoniya/robosys2025.git$) cd robosys2025
+$ git clone [https://github.com/Taysoniya/robosys2025.git$](https://github.com/Taysoniya/robosys2025.git$) cd robosys2025
 ```
 実行権限が付与されてない場合は、以下のコマンドを実行してください。
 ```bash
@@ -25,23 +39,23 @@ $ chmod +x c-newline-add
 ## 基本的な使い方
 標準入力からテキストを流し込みます。
 ```bash
-echo 'void func(){;}' | ./c-newline-add
+$ echo 'void func(){;}' | ./c-newline-add
 ```
 ## ファイルの内容を整形する場合
-catコマンドと組み合わせます。
+`cat`コマンドと組み合わせます。
 ```bash
-cat main.c | ./c-newline-add
+$ cat main.c | ./c-newline-add
 ```
 ## 出力をファイルに保存する場合
 リダイレクトを使用します。
 ```bash
-cat main.c | ./c-newline-add > formatted_main.c
+$ cat main.c | ./c-newline-add > formatted_main.c
 ```
 # 注意点(Limitations)
 
 本ツールは正規表現を用いた簡易的なフィルタです。構文解析（パース）は行わないため、以下の制限があります。
-*for(i=0; i<10; i++) のようなループ文中のセミコロンも強制的に改行されます。
-*文字列リテラル内の記号（例: printf("Error: ;")）も区別せずに処理されます。
+* `for(i=0; i<10; i++)` のようなループ文中のセミコロンも強制的に改行されます。
+* 文字列リテラル内の記号（例:` printf("Error: ;")`）も区別せずに処理されます。
 
 # ライセンス
 - このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます．
