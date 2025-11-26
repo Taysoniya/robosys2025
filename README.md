@@ -32,7 +32,7 @@ $ git clone https://github.com/Taysoniya/robosys2025.git
 ```
 ディレクトリに移動します
 ```
-cd robosys2025
+$ cd robosys2025
 ```
 実行権限が付与されてない場合は、以下のコマンドを実行してください。
 ```
