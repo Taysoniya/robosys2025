@@ -38,7 +38,7 @@ cd robosys2025
 ```
 $ chmod +x c-newline-add
 ```
-# 使い方の例
+## 使い方の例
 
 ## 基本的な使い方
 標準入力からテキストを流し込みます。
@@ -61,7 +61,7 @@ $ cat main.c | ./c-newline-add
 ```
 $ cat main.c | ./c-newline-add > formatted_main.c
 ```
-# 注意点(Limitations)
+# 注意点
 
 本ツールは正規表現を用いた簡易的なフィルタです。構文解析（パース）は行わないため、以下の制限があります。
 * `for(i=0; i<10; i++)` のようなループ文中のセミコロンも強制的に改行されます。
