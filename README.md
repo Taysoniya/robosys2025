@@ -1,11 +1,11 @@
 # robosys2025
 ロボットシステム学の講義用リポジトリ
 
-# c-newline-add
+# c-newline-addコマンド
 標準入力からC言語のソースコードを読み込み、セミコロンや中括弧の後ろで改行を入れて見やすくするコマンドです。
 
-## デモ
-詰め込まれたコードが、以下のように展開されます。
+## 実行例
+詰め込まれたコードが、以下のように出力されます。
 
 ```bash
 $ echo 'int main(){printf("Hello");return 0;}' | ./c-newline-add
@@ -20,15 +20,19 @@ return 0;
 * 右中括弧`}`の後ろで改行
 * 連続する不要な空行の除去
 
-##必要な環境
+## 必要な環境
 * Python3.7
 * Ubuntu 22.04.5 LTS
 
-## インストール
-このリポジトリをクローンしてください。
+## インストール方法
+リポジトリをクローンします。
 
 ```bash
-$ git clone [https://github.com/Taysoniya/robosys2025.git$](https://github.com/Taysoniya/robosys2025.git$) cd robosys2025
+$ git clone https://github.com/Taysoniya/robosys2025.git
+```
+ディレクトリに移動します
+```
+cd robosys2025
 ```
 実行権限が付与されてない場合は、以下のコマンドを実行してください。
 ```bash
