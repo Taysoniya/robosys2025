@@ -2,6 +2,9 @@
 ロボットシステム学の講義用リポジトリ
 
 # c-newline-addコマンド
+
+[![test](https://github.com/Taysoniya/robosys2025/actions/workflows/test.yml/badge.svg)](https://github.com/Taysoniya/robosys2025/actions/workflows/test.yml)
+
 標準入力からC言語のソースコードを読み込み、セミコロンや中括弧の後ろで改行を入れて見やすくするコマンドです。
 
 ## 実行例
