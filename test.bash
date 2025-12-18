@@ -34,7 +34,7 @@ echo "}}}}" | ./c-newline-add > /dev/null 2>&1
 
 out=$(echo 'Hello World' | ./c-newline-add)
 [ "${?}" = 0 ] || ng "$LINENO"
-echo "${out}" | grep -q 'Hello World' || ng "&LINENO"
+echo "${out}" | grep -q 'Hello World' || ng "$LINENO"
 
 
 exit $res
