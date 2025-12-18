@@ -37,4 +37,22 @@ out=$(echo 'Hello World' | ./c-newline-add)
 echo "${out}" | grep -q 'Hello World' || ng "$LINENO"
 
 
+out=$(echo 'int a;int b;' | ./c-newline-add)
+[ "${?}" = 0 ] || ng "$LINENO"
+echo "${out}" | grep -q 'int a;' || ng "$LINENO"
+echo "${out}" | grep -q 'int b;' || ng "$LINENO"
+
+
+out=$(printf 'a=1;\n\n\nb=2;' | ./c-newline-add)
+[ "${?}" = 0 ] || ng "$LINENO"
+
+
+num=$(echo "${out}" | wc -l)
+[ "${num}" -eq 2 ] || ng "$LINENO"
+
+
+echo "" | ./c-newline-add > /dev/null 2>&1
+[ "${?}" = 0 ] || ng "$LINENO"
+
+
 exit $res
