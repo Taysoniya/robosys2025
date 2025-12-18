@@ -49,7 +49,7 @@ $ chmod +x c-newline-add
 ```
 $ echo 'void func(){;}' | ./c-newline-add
 void func(){
-;
+    ;
 }
 ```
 ### ファイルの内容を整形する場合
