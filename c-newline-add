@@ -19,11 +19,36 @@ def main():
         formatted = formatted.replace('}', '}\n')
         formatted = re.sub(r'\n+', '\n', formatted)
 
-        sys.stdout.write(formatted)
+
+        indent_level = 0
+        lines = formatted.split('\n')
+        result = []
+
+
+        for line in lines:
+            line = line.strip()
+            if not line:
+                continue
+
+
+            if '}' in line:
+                indent_level -= 1
+
+
+            result.append("    " * max(0, indent_level) + line)
+
+
+            if '{' in line:
+                indent_level += 1
+
+
+        print('\n'.join(result))
+
 
     except Exception as e:
         sys.stderr.write(f"Error: {e}\n")
         sys.exit(1)
+
 
 if __name__ == "__main__":
     main()
