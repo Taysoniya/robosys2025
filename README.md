@@ -5,7 +5,7 @@
 
 [![test](https://github.com/Taysoniya/robosys2025/actions/workflows/test.yml/badge.svg)](https://github.com/Taysoniya/robosys2025/actions/workflows/test.yml)
 
-標準入力からC言語のソースコードを読み込み、セミコロンや中括弧の後ろで改行を入れて見やすくするコマンドです。
+標準入力からC言語のソースコードを読み込み、セミコロンや中括弧の後ろで改行とインデントを入れて見やすくするコマンドです。
 
 ## 実行例
 詰め込まれたコードが、以下のように出力されます。
@@ -13,20 +13,20 @@
 ```
 $ echo 'int main(){printf("Hello");return 0;}' | ./c-newline-add
 int main(){
-printf("Hello");
-return 0;
+    printf("Hello");
+    return 0;
 }
 ```
 ## 機能
 * セミコロン`;`の後ろで改行
-* 左中括弧`{`の後ろで改行
-* 右中括弧`}`の後ろで改行
+* 左中括弧`{`の後ろで改行し、インデントを下げる
+* 右中括弧`}`の後ろで改行し、インデントを戻す
 * 連続する不要な空行の除去
 
 ## 必要な環境
 * Python
     * テスト済みバージョン:3.10
-* Ubuntu 22.04.5 LTS
+* Ubuntu 24.04 LTS
 
 ## インストール方法
 リポジトリをクローンします。
